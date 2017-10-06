@@ -22,6 +22,10 @@ repositories {
 	mavenCentral()
 }
 
+jar {
+	baseName = 'odenktools-springhackathon'
+	version =  '0.1.0'
+}
 
 dependencies {
 	compile group: 'org.apache.oltu.oauth2', name: 'org.apache.oltu.oauth2.common', version: '1.0.2'
