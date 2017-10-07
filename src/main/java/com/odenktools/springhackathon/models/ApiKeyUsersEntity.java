@@ -5,11 +5,12 @@ import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Calendar;
 
 @Entity
 @Table(name = "api_key_users", schema = "tingtong", catalog = "")
-public class ApiKeyUsersEntity {
+public class ApiKeyUsersEntity implements Serializable {
     private int idKey;
 
     private String keyCode;

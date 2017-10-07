@@ -27,20 +27,31 @@ jar {
 	version =  '0.1.0'
 }
 
+configurations {
+    compile.exclude module: "spring-boot-starter-tomcat"
+}
+
 dependencies {
+    String oltuLib = "25.3.1"
 	compile group: 'org.apache.oltu.oauth2', name: 'org.apache.oltu.oauth2.common', version: '1.0.2'
 	compile group: 'org.apache.oltu.oauth2', name: 'org.apache.oltu.oauth2.client', version: '1.0.2'
 	compile group: 'org.apache.oltu.oauth2', name: 'org.apache.oltu.oauth2.httpclient4', version: '1.0.2'
+	compile group: 'org.apache.oltu.oauth2', name: 'org.apache.oltu.oauth2.authzserver', version: '1.0.2'
 	compile group: 'org.apache.oltu.oauth2', name: 'org.apache.oltu.oauth2.resourceserver', version: '1.0.2'
 	compile group: 'org.apache.oltu.oauth2', name: 'org.apache.oltu.oauth2.dynamicreg.client', version: '1.0.2'
 	compile group: 'org.apache.oltu.oauth2', name: 'org.apache.oltu.oauth2.dynamicreg.server', version: '1.0.2'
 	compile group: 'org.json', name: 'json', version: '20170516'
+    compile('com.google.guava:guava:16.0.1')
 	compile('org.hibernate:hibernate-entitymanager')
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.7.2'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.7.2'
 
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.data:spring-data-rest-hal-browser')
 	compile('org.springframework.boot:spring-boot-starter-validation')
-	compile('org.springframework.boot:spring-boot-starter-web')
+    //compile('org.springframework.boot:spring-boot-starter-security')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile("org.springframework.boot:spring-boot-starter-jetty")
 	runtime('mysql:mysql-connector-java')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
